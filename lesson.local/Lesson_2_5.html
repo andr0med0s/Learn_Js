@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    "use strict"
+    let str = "12.5";
+    console.log(typeof(str)); 
+    let number = Number(str);
+    console.log(typeof(number) + " " + number);
+    console.log(Number("abc"));
+    console.log(Number(true) + " " + Number(false));
+
+    console.log('1' + '2' + 'string');
+    console.log(Number('1') + Number('2') + ' number');
+    console.log(String(true));
+
+    console.log(String(true) + " " + typeof(String(true)));
+    console.log(String(15.7) + " " + typeof(String(15.7)));
+
+    console.log(Boolean(15) + " " + Boolean(0));
+    console.log(Boolean("asdf")  + " " + Boolean(""));
+    console.log(Boolean("0")  + " " + Boolean(""));
+
+    let a = "15";
+    let b = "17";
+    console.log(a+b);
+    console.log(+a + +b);
+    console.log(Number(a) + Number(b));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+<!--
+     Функция Number() имеет четыре типа выходных значений, которые перечислены
+ниже.
+* Числа, отформатированные как текстовые строки, преобразуются в
+числа, которые могут участвовать в вычислениях:
+Number("42") // возвращает число 42
+
+* В случае строк, которые не могут быть преобразованы в числа, воз­
+вращается значение NaN:
+Number("eggs") // возвращает значение NaN
+
+* В случае булевого значения true возвращается число 1:
+Number(true) // возвращает число 1
+
+* В случае булевого значения false возвращается число 0:
+Number(false) // возвращает число 0 
+-->
