@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Условный оператор</title>
+    <script>
+        "use strict";
+        let a = 5;
+        // x += 10;
+        // x ++;
+        // x--;
+        if (a > 5) {
+            console.log(`Переменная a больше 5`);
+        } else {
+            console.log(`Переменная a НЕ больше 5`);
+        }
+        /* можно писать без {}и в одну строку если в блоке только одина комманда
+                if (a > 5) console.log(`Переменная a больше 5`)
+            else console.log(`Переменная a НЕ больше 5`)
+        */
+
+        if (a > 5) {
+            console.log(`Переменная a больше 5`);
+        } else if (a == 5) {
+            console.log(`Переменная a равна 5`);
+        } else {
+            console.log(`Переменная a НЕ больше 5`);
+        }
+
+        let b = 0;
+        let result = (b != 0) ? a / b : 0;
+        /*
+        let result;
+        if (b!=0) result = a/b;
+        else result = 0;
+        */
+        console.log(`result = ` + result);
+        b = 2
+        let result1 = (b != 0) ? a / b : 0;
+        console.log(`result = ` + result1);
+
+        let lang = `ru`;
+        lang = `en`;
+        lang = `fr`;
+        lang = `frass `;
+
+        let str = (lang == `ru`) ? `Здравствуйте`: (lang == `en`) ? `Hello`: (lang == `fr`) ? `Bonjour`: `Неизвестный язык` ;
+        console.log(str);  
+ /* "?" это if , а ":" это else
+/*
+        if(lang == `ru`) str = `Здравствуйте`;
+        else if(lang == `en`) str = `Hello`;
+        else if(lang == `fr`) str = `Bonjour`;
+        else str = `Неизвестный язык`;
+*/
+
+        console.log(str);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

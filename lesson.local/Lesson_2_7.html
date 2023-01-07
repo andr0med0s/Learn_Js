@@ -10,6 +10,29 @@
         let a = 5;
         let b = 8;
         let bool_1 = a < b;
+        let bool_2 = a > b;
+        console.log("bool_1 = " + bool_1);
+        console.log("bool_2 = " + bool_2);
+        console.log("5 < 7 = " +(5 < 7)); 
+        console.log("5 > 7 = " +(5 > 7));
+        console.log("5 >= 5 = " +(5 >= 5));
+        console.log("5 == 5 = " +(5 == 5));
+        console.log("7 == 5 = " +(7 == 5));
+        console.log("5 != 5 = " +(5 != 5));
+
+        console.log(`0 == " " = ` + (0 == "")); // сравнение значений
+        // console.log(false == false);
+        console.log(`0 === " " = `+ (0 === "")); // сравнение не только значений но и типов
+        console.log(`5 === " " = `+ (5 === ""));
+        console.log(`5 == " " = `+ (5 == ""));
+        console.log(`true == false = `+ (true == false));
+        console.log(`true === true = `+ (true == true));
+
+        console.log(`АБВ > ББВ = ` + (`АБВ` > `ББВ`)); // каждому символу соответствует значение кодировки
+        console.log(`123 > ББВ = ` + (`123` > `ББВ`));
+        console.log(`123 > ББВ = ` + `123` > `ББВ`); // операции сравнения имеют более низкий 
+        // console.log(`123 > ББВ = 123` > `ББВ`); //приоритет по отнощению к сложению
+
     </script>
 </head>
 <body>

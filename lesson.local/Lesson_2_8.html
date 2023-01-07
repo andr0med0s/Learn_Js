@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логические операции</title>
+    <script>
+        "use strict";
+        let a = true;
+        let b = false;
+        console.log(" a = " + a);
+        console.log(" b = " + b);
+
+
+        //a = !a;
+        console.log("!a = " + (!a));
+        console.log("a && b =  " + (a && b)); // true если оба true ...
+                                              // false если хотя бы один false
+        /*
+        логическое умножение ---- логическое И
+            1 0
+            1 * 0 = 0
+            0 * 1 = 0
+            0 * 0 = 0
+            1 * 1 = 1
+        */
+
+        console.log(" a || b = " + (a || b)); // если хотябы один true то на выходе true 
+        /*
+        логическое сложение ---- логическое ИЛИ
+        1 0 
+        1 + 0 = 1
+        0 + 1 = 1
+        1 + 1 = 1
+        0 + 0 = 0
+        */
+
+       //логического исключающего ИЛИ в JS нет
+        console.log(" a ^ b = " + (a ^ b)); //побитовое сравнение побитовое исключающее ИЛИ
+        console.log(" 3 ^ 4 = " + (3 ^ 4));
+        console.log(" 3 & 4 = " + (3 & 4));
+        console.log(" 3 | 4 = " + (3 | 4));
+
+        console.log("a && (a || b || (5 < 7)) = " + (a && (a || b || (5 < 7)))); 
+        // true && (если был бы false то дальнейшее вычисление не имеют смысла)  true false true 
+        //выход true 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
