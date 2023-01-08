@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+
+        if (confirm(`Хотите вопрос ?`)) {
+            let age = prompt(`Сколько Вам лет?`);
+
+            age = Number(age);
+            if (Number.isNaN(age)) alert(`Некорректное число`);
+
+            let age1 = (age < 18) ? `У меня юный возраст` : (age > 18 && age <= 30) ? `Я молодой` : (age >= 31 && age <= 50) ? `Я взрослый` : (age >= 51 && age <= 80) ? `Я зрелый` : `Я старый`;
+            console.log(age1);
+        }
+        
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

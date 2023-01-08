@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оператор switch-case</title>
+    <script>
+        "use strict";
+        let a = +prompt(`Введите целое число от 1 до 5`);
+        console.log(a + ` 33` + typeof(a));
+        switch (a){
+            case 1:
+                alert(`Вы ввели один`);
+                break;
+            case 2:
+                alert(`Вы ввели два`);
+                break;
+            case 3:
+                alert(`Вы ввели три`);
+                break;
+            case 4:
+            case 5:
+                alert(`Вы ввели четыре или пять`);
+                break;
+            default:
+                alert(`Некорректный ввод`);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

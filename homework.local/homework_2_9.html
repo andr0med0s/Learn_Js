@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        let bool = (false);
+        if (bool == true) {
+            console.log(`Да, я мужчна`);
+        }else{
+            console.log(`Нет, я женщина`);
+        }
+        let age = 43;
+        if (age < 18) {
+            console.log(`У меня юный возраст`);
+        } else if (age > 18 && age <= 30) { 
+            console.log(`Я молодой`);
+        } else if (age >= 31 && age <= 50) {
+            console.log(`Я взрослый`);
+        } else if (age >= 51 && age <= 80) {
+            console.log(`Я зрелый`);
+        } else  {
+            console.log(`Я старый`);
+        }
+
+        console.log(`--------------`)
+        
+        let age1 = (age < 18) ? `У меня юный возраст`: (age > 18 && age <= 30) ? `Я молодой` : (age >= 31 && age <= 50) ? `Я взрослый` : (age >= 51 && age <= 80) ? `Я зрелый` : `Я старый`;
+        console.log(age1);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

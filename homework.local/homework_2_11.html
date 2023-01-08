@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        for(let i = 0 ; i < 20 ; i++) {
+            console.log(`Здравствуйте ` + i);
+        }
+
+        console.log(`------while-----`);
+        let i = 0;
+        while(i < 20) {
+            console.log(`Здравствуйте`);
+            i++;
+        }
+
+        console.log(`----do -- while--`);
+        i = 0;
+        do {
+            console.log(`Здравствуйте`);
+            i++;
+        }while (i<20) {}
+
+        console.log(`----for -- for--`);
+        for(let i = 0; i < 5; i++){
+            for(let j = 0; j < 5; j++){
+                console.log((`значение внешнее i =  `) + i, (`значение j= `) + j);
+            }
+        }
+
+        for(let i = 0; i < 5; i++){
+            for(let i = 0; i < 5; i++){
+                console.log((`значение i= `) + i, (`таже i= `) + i);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
