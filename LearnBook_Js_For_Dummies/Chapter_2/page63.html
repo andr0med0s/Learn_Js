@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        //функция Number()
+        console.log(Number(`42`));// возвращает число 42
+        console.log(Number(`eggs`));// возвращает NaN
+        console.log(Number(true)); // возвращает 1
+        console.log(Number(false));// возвращает 0
+
+        //функция parseInt()
+        console.log(parseInt(100.33)); // возвращает 100 ...
+        //отбрасывает все что после десятичной точки
+
+        //функция parseFloat()
+        console.log(parseFloat(100.33)); // возвращает 100,33 позволяет
+        // явно указать число с плавующей точкой
+        console.log(parseFloat(`10`)); // возвращает 10 ..преобразует строку 10
+        // в число 10  
+
+        //--------------------------------------
+
+        //charAt() Возвращает символ, находящийся в указанной позиции(индекс)
+        // в строке. Отсчет начинается с 0
+        let watzThisString = `JavaScript - это здорово!`;
+        console.log(watzThisString.charAt(3)); //возвращает a
+
+        //concat() Присоединяет одну строку к другой и возвращает объединенную
+        console.log(watzThisString.concat(` Нам нравится JS !`));
+
+        //indexOf() Выполняет поиск первого вхождения символа или
+        // подстроки в данной строке и возвращает номер 
+        //соответствующей позиции(индекса)
+        console.log(watzThisString.indexOf(`здорово`));
+        // возвращает 17
+
+        //split() Разбивает строку на массив подстрок
+        console.log(watzThisString.split(`з`));
+        // возвращает ["JavaScript - это ", "дорово!"]
+
+        //substr() Извлекает часть строки, начиная с указанной
+        // позиции, и возвращает указанное количество символов
+        console.log(watzThisString.substr(2, 5));
+        //возвращает "vaScr"
+
+        //substring() Извлекает символы строки, заключенные между указанными позициями
+        console.log(watzThisString.substring(2, 5));
+        // возвращает "vaS"
+
+        //toLowerCase() Переводит все символы строки в нижний регистр
+        console.log(watzThisString.toLowerCase());
+        // возвращает "javascript - это здорово!"
+
+        //toUpperCase() Переводит все символы строки в верхний регистр
+        console.log(watzThisString.toUpperCase())
+        // возвращает "JAVASCRIPT - ЭТО ЗДОРОВО!"
+
+        //---------------------
+        /*Булевы переменные часто используют для хранения результатов сравнения.
+        С по­мощью функции Boolean () можно найти булев результат сравнения или
+        преобразо­вать любое значение JavaScript в булево значение.*/
+
+        let isItGreater = Boolean(3 > 20);
+        alert(isItGreater); // return false
+
+        let areTheySame = Boolean("тигр" === "Тигр");
+        alert(areTheySame); //returns false
+
+/*
+В JavaScript следующие значения всегда дают при вычислении булево значение false:
+        • NaN;
+        • undefined;
+        • 0 (нулевое численное значение);
+        • -0 ;
+        • "" (пустая строка);
+        • false;
+*/
+/*
+Все остальное, что не относится к перечисленным выше значениям,
+дает при вычислении булево значение true. Например:
+• 74;
+• "Eva";
+• "10";
+• "NaN".
+*/
+
+//тип данных NaN -- возвращается при попытке выполнения матема­
+//тических операций над строками, которые не могут быть 
+//преобразованы в числа.
+
+//тип данных undefined -- Даже если вы создадите переменную 
+//JavaScript и не присвоите ей какое-либо зна­
+//чение, она всегда будет иметь значение по умолчанию. 
+
+    </script>
+</body>
+
+</html>
