@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функциональные выражения</title>
+    <script>
+        "use strict";
+        function hello() {
+            console.log(`Выводим что нибудь в консоль`);
+        }
+
+        let h = function(){
+            console.log(`Функциональное выражение`);
+        }
+
+        function success(name) {
+            alert(`Спасибо, ${name}!`);
+        }
+
+        function error(){
+            alert(`Некорректный ввод`);
+        }
+
+        function errorName(){
+            alert(`Некорректное имя`);
+        }
+
+        // function checkName(name, success, error){
+            function checkName(name, fs, fe){  // <---1*
+            // if(name.length >=2) success(name);
+            if(name.length >=2) fs(name); // <---2*
+            // else error();
+            else fe();
+        }
+
+        console.log(hello);
+        let f = hello;
+
+        f();
+        h();
+
+        let name = prompt(`Введите имя: `);
+        // checkName(name, success, error);
+        checkName(name, success, errorName);   //<-- 1*--это и 2* это callback функция
+    
+        let func;
+        let x = +prompt(`Введите число: `);
+        if (x < 0) func = function() {
+            alert(`Вы ввели отрицательное число`);
+        }
+        else if (x == 0) func = function() {
+            alert(`Вы ввели 0`);
+        }
+        else func = function(){
+            alert(`Вы ввели положительное число`);
+        }
+
+        func();
+
+        //функция в JS является фактически переменной 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

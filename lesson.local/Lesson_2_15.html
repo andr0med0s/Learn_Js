@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стрелочные функции</title>
+    <script>
+        "use strict";
+/*        function sum(x, y, z) {
+            return x + y + z;
+        }*/
+        let sum = (x, y, z) => (x + y + z); // стрелочная функция
+        let hello = () => console.log(`hello`);
+        console.log(sum(5,10,3));
+        hello();
+
+        let div = (x, y) => {
+            if (y == 0) return false;
+            return x / y;
+        }
+        console.log(div(10, 5));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
