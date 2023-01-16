@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        /*0
+                        let a = +prompt(`Введите целое число  от 1 до 5`);
+                        switch (a) {
+                            case 1:
+                                alert(`Вы ввели один`);
+                                break;
+                            case 2:
+                                alert(`Вы ввели два`);
+                                break;
+                            case 3:
+                                alert(`Вы ввели три`);
+                                break;
+                            case 4:
+                                alert(`Вы ввели четыре`);
+                                break;
+                            case 5:
+                                alert(`Вы ввели пять`);
+                                break;
+                            default:
+                                alert(`нет представления для числа в виде строки`);
+                        }
+                   */
+
+        /*1
+                        function wordsNum(a = +prompt(`Введите целое число  от 1 до 5`)) {
+                            switch (a) {
+                                case 1:
+                                    return console.log(`Вы ввели один`);
+                                    break;
+                                case 2:
+                                    return console.log(`Вы ввели два`);
+                                    break;
+                                case 3:
+                                    return console.log(`Вы ввели три`);
+                                    break;
+                                case 4:
+                                    return console.log(`Вы ввели четыре`);
+                                    break;
+                                case 5:
+                                    return console.log(`Вы ввели пять`);
+                                    break;
+                                default:
+                                    return console.log(`нет представления для числа в виде строки`);
+                            }
+                        }
+                */
+
+        /*2-3-4
+                        function wordsNum(a) {
+                           chk: while (a = +prompt(`Введите целое число  от 1 до 5`)) {
+                                if (a < 0) {
+                                    break;
+                                }
+                
+                                // else if (a > 5) {
+                                //     alert(`нет представления для числа в виде строки`);
+                                //     continue;
+                                // }
+                
+                                switch (a) {
+                                    case 1:
+                                        alert(`Вы ввели один`);
+                                        break;
+                                    case 2:
+                                        alert(`Вы ввели два`);
+                                        break;
+                                    case 3:
+                                        alert(`Вы ввели три`);
+                                        break;
+                                    case 4:
+                                        alert(`Вы ввели четыре`);
+                                        break;
+                                    case 5:
+                                        alert(`Вы ввели пять`);
+                                        break;
+                                    default:
+                                    alert(`нет представления для числа в виде строки`);
+                                    continue chk;
+                                }
+                            }
+                        }
+                        wordsNum();
+                */
+
+        /*-5
+        // функция проверки ввода нужных данных
+        function isValidNumber( n, arr = [1,2,3,4,5 ] ){
+        let ok = (n !=null && isNaN(n)==false && typeof( n ) == "number" && isFinite( n ) )
+        return ok == true && arr.includes( n ) == true;
+        }
+        -*/
+
+        function isValidNumber(a) {
+            let ok = (a != null && isNaN(a) == false && typeof (a) == "number")
+            return ok == true;
+            
+        }
+
+        function wordsNum(a) {
+            chk: while ((a = +prompt(`Введите целое число  от 1 до 5`))!= null  ) {
+                if (a < 0) {
+                    break;
+                }
+
+                else if (!isValidNumber(a)) { /* false */
+                    alert("это не число");
+                    continue;
+                }
+                else {
+                    switch (a) {
+                        case 1:
+                            alert(`Вы ввели один`);
+                            break;
+                        case 2:
+                            alert(`Вы ввели два`);
+                            break;
+                        case 3:
+                            alert(`Вы ввели три`);
+                            break;
+                        case 4:
+                            alert(`Вы ввели четыре`);
+                            break;
+                        case 5:
+                            alert(`Вы ввели пять`);
+                            break;
+                        default:
+                            alert(`нет представления для числа в виде строки`);
+                            continue chk;
+                    }
+                }
+            }
+        }
+        wordsNum();
+
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
