@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        /*--1
+                function error(msg) {
+                    console.log(msg);
+                }
+                error('что-то');
+        --*/
+        /*--2-3
+                function test(num1, num2, sum) {
+                    function sumNumber(sum) {
+                        // let s = num1 + num2;
+                        // return s;
+                        return num1 + num2;
+                    }
+                    let s = sumNumber(sum);
+                    alert(s);
+                }
+        test(3, 2);
+        test(13, 62);
+        --*/
+        /*--4--*/
+        // function test(num1, num2, sum) {
+        //             function sumNumber(sum) {
+        //                 if (!isNaN(parseFloat(num1 || num2)) && isFinite(num1 || num2)){
+        //                 // console.log("Числа!");
+        //                 let s = num1 + num2;
+        //                 return s;
+        //                 }else {
+        //                 return console.log("некорректные параметры");
+        //                 }
+        //                 // let s = num1 + num2;
+        //                 // return s;
+        //             }
+        //             let s = sumNumber(sum);
+        //             alert(s);
+        //         }
+
+        // test(5,6);
+        // test("s",6);
+        
+        function isNumber(num) {
+            if(typeof num === 'number' && !isNaN(num)){
+                return console.log(`это число`);
+            }else{
+                console.log(`это не число`);
+            }
+             
+            
+        }
+        isNumber(`a`);
+        isNumber(12);
+        isNumber('25');
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
