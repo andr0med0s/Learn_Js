@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+    
+        let s = () => (num1 + num2);
+    
+        let sumNuber = (num1, num2, sum) => {
+            if(checkError() == true){
+            return alert( (`сумма чисел равна: `) + s());
+            }
+        }
+    
+        let error = () => alert(`Были переданы некорректные параметры`);
+    
+        let checkError = () => {
+                if(typeof num1 && typeof num2 === 'number' && !isNaN(num1 && num2)){
+                return true;
+            }else{
+                return error();
+            }
+        }
+    
+        let num1 = +prompt(`Введите первое число: `);
+        let num2 = +prompt(`Введите второе число: `);
+
+        sumNuber();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
