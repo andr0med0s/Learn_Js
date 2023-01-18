@@ -46,21 +46,53 @@
 
         // test(5,6);
         // test("s",6);
+        // let  num = +prompt(`Введите первое число: `);
+        // function isNumber() {
+        //     if(typeof num === 'number' && !isNaN(num)){
+        //         return console.log(`это число`);
+        //     }else{
+        //         console.log(`это не число`);
+        //     }
+        // }
         
-        function isNumber(num) {
-            if(typeof num === 'number' && !isNaN(num)){
-                return console.log(`это число`);
-            }else{
-                console.log(`это не число`);
-            }
-             
-            
+        // isNumber();
+/*----4-5-6------*/
+        let s = function sum(){    
+            return (num1 + num2);
         }
-        isNumber(`a`);
-        isNumber(12);
-        isNumber('25');
+
+        function sumNumber(num1, num2, sum){
+            if(cE() == true){
+            return alert( (`сумма чисел равна: `) + s());
+            }
+        }
+
+        // let e = function error(){
+        function error(){
+            alert(`Были переданы некорректные параметры`);
+        }
+
         
-        
+
+        let cE = function checkError(){
+            if(typeof num1 && typeof num2 === 'number' && !isNaN(num1 && num2)){
+                return true;
+                // return sumNumber();
+                // return console.log(`это числа`);
+            }else{
+                // console.log(` это не число`);
+                return error();
+                // return e();
+            }
+        } 
+
+        let num1 = +prompt(`Введите первое число: `);
+        let num2 = +prompt(`Введите второе число: `);
+
+        // s();
+        sumNumber();
+        // checkError();
+
     </script>
 </head>
 
