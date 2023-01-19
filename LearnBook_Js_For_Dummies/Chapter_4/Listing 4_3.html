@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Методы для работы с массивами</title>
+    <script>
+        "use strict";
+        let animals = ["тигр", "медведь"];
+        let fruit = ["дыня", "апельсин"];
+        let dishes = ["тарелка", "бокал", "чашка"];
+
+        let whereIsTiger = animals.indexOf("тигр");
+        let fruitsAndAnimals = fruit.concat(animals);
+
+        document.write (animals + "<br>");
+        document.write ("Индекс тигра: " + whereIsTiger + "<br>");
+        document.write (fruitsAndAnimals + "<br>");
+        whereIsTiger = fruitsAndAnimals.indexOf("тигр");
+        document.write ("Индекс тигра: " + whereIsTiger + "<br>");
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

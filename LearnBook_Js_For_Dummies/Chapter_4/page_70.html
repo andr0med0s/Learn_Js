@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основные сведения о массивах</title>
+    <script>
+        //Листинг 4.1. Хранение данных различного типа в одном массиве
+        "use strict";
+       /* item [0] = "apple";
+        item [1] = 4+8;
+        item [2] = 3;
+        item [3] = item [2] * item[1] ;*/
+        //--Использование ключевого слова new
+        let catNames = new Array("Larry", "Fuzzball", "Mr. Furly");
+        //--Литеральное определение массива
+        let dogNames = ["Shaggy", "Tennesee", "Dr. Spock"];
+        //Листинг 4.2. Заполнение пустого массива
+        let peopleList = [];
+        peopleList[0] = "Chris Minnick";
+        peopleList[1] = "Eva Holland";
+        peopleList[2] = "Abraham Lincoln";
+        peopleList[99] = "Tina Turner";
+
+        console.log (peopleList.length); // возврашает 100
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
