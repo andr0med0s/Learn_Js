@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практический пример</title>
+    <script>
+        "use strict";
+        let arr = [];
+        while (true){
+            let code = prompt(`Введите код операции\n (1 - добавить элемент; 2 - вывести массив; 3 - выход из цикла) : `);
+            if (code == `1`){
+                arr[arr.length] = prompt(`Введите элемент`);
+            }else if( code == `2`){
+                let str = ``;
+                for(let index in arr){
+                    str += `${index}-й элемент равен ${arr[index]}`;
+                    if (Number(index) + 1 != arr.length) str += `\n`;
+                    // console.log(typeof(index));
+                }
+                alert(str);
+            }
+            else if ( code == `3`) break;
+            else alert(`Неизвестный код!`);
+        }  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Массивы</title>
+    <script>
+        "use strict";
+
+        function printArray(arr){
+            console.log('Длина иассива: ' + arr.length);
+            // for (let i = 0; i < arr.length; i++){
+            //     console.log(`Элемент с индексом ${i} равен ${arr[i]}`);
+            // }
+
+            for (let key in arr) {
+                console.log(`Элемент с индексом ${key} равен ${arr[key]}`);
+            }
+
+            for (let elem of arr) {
+                console.log(`Элемент ${elem}`);
+            }
+        }
+
+        function getAverageValue(arr) {
+            
+            let sum = 0;
+            for (let elem of arr) sum +=elem;
+            return sum / arr.length;
+        }
+
+        function getMaxValue(arr){
+            let max = arr[0];
+            for (let elem of arr){
+                if (elem > max) max = elem;
+            }
+            return max;
+        }
+
+        let arr = []; // аналог let arr = new Array();
+        arr = ['Строка', 10, true, false, 'Alex'];
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+        console.log(arr[3]);
+        console.log(arr[4]);
+
+        arr[4] = 'John';
+        console.log(arr[4]);
+
+        arr[5] = 40;
+        console.log(arr[5]);
+        console.log(arr);
+
+        printArray(arr);
+
+        console.log(`-----------------`);
+        console.log(`Среднее значение [10, 10, 25] равно ` + getAverageValue([10, 10, 25]));
+        console.log(`Max значение [10, 10, 5, 25, 15] равно ` + getMaxValue([10, 10, 5, 25, 15]));
+
+        arr = [[1, 2, 3], [4, 5]];
+        console.log(arr[0][2]);
+        for(let row in arr){
+            for(let col in arr[row]){
+                console.log(`Элемент с индексом ${row}, ${col} равен ${arr[row][col]}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
