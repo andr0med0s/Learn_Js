@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+        let arr = [];
+        // let arr = [11550, 55, 15, 25, 66, 845, 254, 12, 89, 15];
+        let length = 10;
+
+        for (let v = 1; v <= length; v++) {
+            arr.push(v);
+        }
+        for (let i = 0; i < length; i++) {
+
+            console.log(`Элемент с индексом ${i} равен ${arr[i]}`);
+        }
+        console.log(arr)
+
+        function getIndexMinValue(arr) {
+            let min = arr[0];
+            for (let elem of arr) {
+                if (elem < min) min = elem;
+            }
+            return arr.indexOf(min);
+
+        }
+        console.log(`Индекс минимального значения ` + getIndexMinValue(arr));
+
+        arr = [[150, 55, 15, 25], [845, 254, 12, 89]];
+        function getMaxValue(arr) {
+            let max = arr[0][0];
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    let currentValue = arr[i][j];
+                    if (currentValue > max) {
+                        max = currentValue;
+                    }
+                }
+            }
+            return max;
+        }
+        console.log(`Максимального значениe ` + getMaxValue(arr));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
