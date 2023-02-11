@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="return">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="function.js"></script>
+    <script>
+        "use strict";
+        while (true) {
+            let firstNum = prompt(`Введите первое число: `);
+
+            if(firstNum == "exit"){
+                break;
+            }else {
+                firstNum = Number(firstNum);
+            }
+
+
+        try{
+            if (firstNum != `` && isNaN(firstNum) == false && typeof (firstNum) == "number"){
+                let code = prompt(`Выберите действие\n 1 - сложение; 2 - вычитание; 3 - умножение; 4 - деление`);
+                if (code == `1`) {
+                    let secondNum = +prompt(`Введите второе число: `);
+                    if (secondNum != `` && isNaN(secondNum) == false && typeof (secondNum) == "number"){
+                        sum(firstNum, secondNum);
+                    }else{
+                        err;
+                    }
+                    
+                    
+                }
+                else if (code == `2`) {
+                    let secondNum = +prompt(`Введите второе число: `);
+                    if (secondNum != `` && isNaN(secondNum) == false && typeof (secondNum) == "number"){
+                    sub(firstNum, secondNum);
+                    }else{
+                        err;
+                    }
+                }
+                else if (code == `3`) {
+                    let secondNum = +prompt(`Введите второе число: `);
+                    if (secondNum != `` && isNaN(secondNum) == false && typeof (secondNum) == "number"){
+                    mult(firstNum, secondNum);
+                    }else{
+                        err;
+                    }
+                }
+                else if (code == `4`) {
+                    let secondNum = +prompt(`Введите второе число: `);
+                    if (secondNum != `` && isNaN(secondNum) == false && typeof (secondNum) == "number"){
+                    div(firstNum, secondNum);
+                    }else{
+                        err;
+                    }
+                }
+            }
+            else {
+                err;
+                // alert("Некорректный ввод");
+            }
+        } catch(err) {
+            alert("Некорректный ввод");
+        }
+/*
+Как проверить isNaN?
+функция «isNaN()» при проверке вернет «true» в двух случаях: если при проверке значение уже NaN и если оно станет NaN после попытки преобразования его в число;
+ метод «Number. isNaN()» вернет «true» только если значение при проверке уже является NaN
+*/
+    }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
