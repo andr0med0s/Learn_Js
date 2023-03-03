@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Создание объекта</title>
+	<script type="text/javascript">
+		"use strict";
+		let point = {};
+		point = {
+			x: 10,
+			y: 20
+		};
+		console.log(point);
+		console.log(point.x);
+		console.log(point.y);
+		point.x = 15;
+		console.log(point.x);
+		point.z = 40;
+		console.log(point.z);
+		console.log(point[`z`]);
+
+		for (let field in point) { // in перебирает ключи of перебирает значение
+			// console.log(typeof(field));	 
+			console.log(`Поле ${field} равно ${point[field]}`);
+		}
+
+		let obj = {
+			'two words': true,
+			p: {
+				x: 20,
+				y: 30
+			}
+		};
+		console.log(obj['two words']);
+		console.log(obj.p.x);
+
+		let point1 = {
+			x:20,
+			y:30
+		};
+		// let point2 = point1;
+		// point1.x = 100;
+		// console.log(point2.x);
+
+		let point2 = {};
+		for(let key in point1){
+			point2[key] = point1[key];
+		}
+		point1.x = 100;
+		console.log(point2.x);
+
+		let point3 = {};
+		Object.assign(point3, point1);
+		point1.x = 300;
+		console.log(point3.x);
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
