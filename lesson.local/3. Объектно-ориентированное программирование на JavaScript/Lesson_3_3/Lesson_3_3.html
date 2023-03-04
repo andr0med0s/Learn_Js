@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Создание конструктора</title>
+	<script type="text/javascript">
+		"use strict";
+		function Point(x, y) {
+			this.x = x;
+			this.y = y;
+			this.print = function () {
+				console.log(`Точка с координатами ${this.x} и ${this.y}`);
+			}
+			this.distance = function () {
+				return Math.sqrt(this.x ** 2 + this.y ** 2);
+			}
+
+		}
+
+		let p = new Point(10, 20);
+		console.log(p.x + '; ' + p.y);
+		p.print();
+		p.x = 5;
+		p.y = 7; 
+		p.print();
+		console.log(p.distance());
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

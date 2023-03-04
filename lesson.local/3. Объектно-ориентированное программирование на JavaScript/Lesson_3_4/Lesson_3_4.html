@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Использование Symbol</title>
+	<script type="text/javascript">
+		"use strict";
+		/*код стороннего разработчика: Начало*/
+		let point = {
+			x:10,
+			y:20
+		}
+		point.z = 30;
+		// point[Symbol()] = 50;
+		/*код стороннего разработчика: Конец*/
+		let z = Symbol();
+		point[z] = 40;
+		console.log(`От разработчика свойство z: ` + point.z);
+		console.log(`Наше добавленное свойство z через Symbol: ` + point[z]);
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

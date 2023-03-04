@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Методы toString и valueOf</title>
+	<script type="text/javascript">
+		"use strict";
+		function Point(x,y) {
+			this.x = x;
+			this.y = y;
+			this.toString = function(){
+				return `Точка с координатами ${this.x} и ${this.y}`;
+			}
+			this.valueOf = function(){
+				return Math.sgrt(this.x ** 2 + this.y ** 2);
+			}
+		}
+
+		let p = new Point(10, 20);
+		alert(p);
+		alert(Number(p));
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
