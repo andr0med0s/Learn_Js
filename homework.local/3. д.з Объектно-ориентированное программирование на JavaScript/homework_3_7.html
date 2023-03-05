@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>дЗ Геттеры и сеттеры</title>
+	<script type="text/javascript">
+		"use strict";
+
+		class Rectangle {
+
+			constructor(x, y, h, w){
+			this._x = x;
+			this._y = y;
+			this._h = h;
+			this._w = w;
+			}
+			get h(){
+				return this._h;
+			}
+			get w(){
+				return this._w;
+			}
+
+			set h(coor){
+				if (coor < 0) this._h = 0;
+				else this._h = coor;
+			}
+
+			set w(coor){
+				if (coor < 0) this._w = 0;
+				else this._w = coor;
+			}
+
+			get s () {
+				return this.h * this.w;
+			}
+			getCoordinate = function () {
+				console.log(`Точка с координатами ${this._x} и ${this._y}`);
+			}
+
+			getDistance = function () {
+				return Math.sqrt(this._x ** 2 + this._y ** 2);
+			}
+
+			toString = function(){
+				return `Прямоугольник с координатами (${this._x}; ${this._y}) шириной ${this.w} и высотой ${this.h}`;
+			}
+			valueOf = function(){
+				return  rect.s;
+			}
+		}
+
+		let rect = new Rectangle(10, 20, 200, 300);
+		console.log(rect);
+		console.log(rect.s);
+		console.log(rect.getCoordinate());
+		console.log(rect.getDistance());
+		console.log(rect.toString());
+		console.log(rect.valueOf());
+		
+		console.log(`---------------`);
+
+
+		rect.h = -250;
+		console.log(rect.h);
+		rect.w = -500;
+		console.log(rect.w);
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Создание объекта д.з</title>
+	<script type="text/javascript">
+		"use strict";
+		let rect = {
+
+			x: 20,
+			y: 30,
+
+			h: 300,
+
+			w: 200
+
+		};
+
+
+		function info(rect){
+			for (let field in rect) {
+				console.log(`Поле ${field} равно ${rect[field]}`);
+			}
+		};
+		console.log(`_______info________`);
+
+		info(rect);
+
+		console.log(`________new_______`);
+
+		rect.x = 25;
+		rect.y = 35;
+		rect.h = 400;
+		rect.w = 300;
+		info(rect);
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

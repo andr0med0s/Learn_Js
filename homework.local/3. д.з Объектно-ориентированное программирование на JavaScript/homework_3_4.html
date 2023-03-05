@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Использование Symbol д.з</title>
+	<script type="text/javascript">
+		"use strict";
+		let obj = {
+
+		}
+
+		let z = Symbol();
+		let n = Symbol();
+		obj[z] = 20;
+		obj[n] = 30;
+
+		console.log(`свойство z и n ` + obj[z] + ` ` + obj[n]);
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
