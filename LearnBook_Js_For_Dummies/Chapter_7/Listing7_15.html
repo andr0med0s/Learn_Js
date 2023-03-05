@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <title> Возврат значений из внутренней функции<title>
+</head>
+
+<body>
+  <script>
+
+    function turnIntoAMartian(myName) {
+      function recallName(myName) {
+        let martianName = myName + " Марсианин";
+        return martianName;
+      }
+      let martianName = recallName(myName);
+      console.log(martianName);
+    }
+
+  </script>
+</body>
+
+</html>

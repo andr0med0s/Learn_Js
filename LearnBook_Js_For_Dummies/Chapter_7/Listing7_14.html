@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <title>Объявление функций в функциях<title>
+</head>
+
+<body>
+  <script>
+
+    function turnIntoAMartian(myName) {
+      function recallName(myName) {
+        let martianName = myName + " Марсианин";
+      }
+      recallName(myName);
+      console.log(martianName);
+      // вернуть undefined
+    }
+/*
+Предыдущий пример показывает, как вложение функции в другую функцию соз­
+дает другой уровень области видимости. К переменным, созданным во внутренней
+функции, невозможен непосредственный доступ извне.
+*/
+  </script>
+</body>
+
+</html>

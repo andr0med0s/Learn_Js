@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title>Рекурсивная функция с заданными условиями
+    для прекращения выполнения и базовым случаем<title>
+</head>
+
+<body>
+  <script>
+
+    function squareItUp(startingNumber) {
+      // Условия прекращения выполнения, неверный ввод
+      if ((typeof startingNumber != 'number') || (startingNumber <= 1)) {
+        return - 1; // выйти из функции
+      }
+      square = staringNumber * startingNumber;
+      // Базовый случай
+      if (square > 1000000) {
+        console.log(square);
+        // Вывести конечный результат
+      } else { // Если базовое условие не выполняется ,
+        // то выполнить снова
+        squareItUp(square);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

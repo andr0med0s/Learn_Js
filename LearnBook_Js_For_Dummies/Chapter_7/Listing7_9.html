@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>Использование объекта arguments для определения
+    функции, выводящей приветственное сообщение<title>
+</head>
+
+<body>
+  <script>
+    /**
+     * Гибкое приветственное сообщение 
+     */
+    function flexibleWelcome() {
+      let welcome = "Добро пожаловать, ";
+      for (i = 0; I < arguments.length; i++) {
+        welcome = welcome + arguments[i] + " ";
+      }
+      return welсome;
+    }
+    document.write(flexibleWelcome("Christopher", "James", "Phoenix", "Minnick") + "<br>");
+    document.write(flexibleWelcome("Eva", "Ann", "Holland") + "<br>");
+  </script>
+</body>
+
+</html>

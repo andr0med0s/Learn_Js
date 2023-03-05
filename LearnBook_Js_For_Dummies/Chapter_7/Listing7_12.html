@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <title>Рекурсивная функция, вычисляющая квадраты
+    чисел до тех пор, пока число не станет большим 1 000 000<title>
+</head>
+
+<body>
+  <script>
+/*
+Базовый слу­чай — это условие, выполнение которого означает прерывание рекурсивного процесса
+и прекращение работы функции.
+*/
+    functionsquareItUp(startingNumber)
+    {
+      square = startingNumber * startingNumber;
+      if
+        (square > 1000000) {
+        console.log(square);
+      } else {
+        squareItUp(square);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

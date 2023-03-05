@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title> Демонстрация передачи аргументов по значению_<title>
+</head>
+
+<body>
+  <script>
+    /**
+    * Инкрементирование двух значений
+    * @param {number} number1
+    * @param {number} number2
+    */
+    function addToMyNumbers(number1, number2) {
+      number1++;
+      number2++;
+      console.log("Значение number 1 в функции: " + number1);
+      console.log("Значение number 2 в функции: " + number2);
+    }
+
+    let number1 = 3;
+    let number2 = 12;
+
+    addToMyNumbers(number1, number2); // передача двух аргументов
+
+    console.log("Исходное значение number1: " + number1);
+    console.log("Исходное значение number2: " + number2);
+  </script>
+</body>
+
+</html>
