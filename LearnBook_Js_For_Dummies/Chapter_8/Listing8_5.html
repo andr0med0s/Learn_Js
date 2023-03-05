@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <title>Создание метода</title>
+</head>
+
+<body>
+  <script>
+
+    /*
+    Методы — это свойства, значениями которых являются функции. Метод опреде­
+ляется точно так же, как и любая функция. Единственное различие состоит в том, что
+метод присваивается свойству объекта. В листинге 8.5 продемонстрировано создание
+объекта с несколькими свойствами, одним из которых является метод.
+    */
+    let sandwich = {
+      meat: " ",
+      cheese: " ",
+      bread: " ",
+      condiment: " ",
+      makeSandwich: function (meat, cheese, bread, condiment) {
+        sandwich.meat = meat;
+        sandwich.cheese = cheese;
+        sandwich.bread = bread;
+        sandwich.condiment = condiment;
+        let mySandwich = sandwich.bread + ", " + sandwich.meat + ", " + sandwich.cheese + ", " + sandwich.condiment;
+        return mySandwich;
+      }
+    }
+  </script>
+</body>
+
+</html>

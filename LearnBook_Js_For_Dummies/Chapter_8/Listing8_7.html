@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title>Сделайте мне сэндвич</title>
+</head>
+
+<body>
+  <script>
+// Использование ключевого слова this в методе
+    let sandwich = {
+      meat: " ",
+      cheese: " ",
+      bread: " ",
+      condiment: " ",
+      
+      makeSandwich: function (meat, cheese, bread, condiment) {
+        this.meat = meat;
+        this.cheese = cheese;
+        this.bread = bread;
+        this.condiment = condiment;
+        let mySandwich = this.bread + ", " + this.meat + ", " + this.cheese + ", " + this.condiment;
+        return mySandwich;
+      }
+    }
+    let sandwichOrder = sandwich.makeSandwich("ham", "cheddar", "wheat", "spicy mustard");
+    document.write(sandwichOrder);
+
+  </script>
+</body>
+
+</html>

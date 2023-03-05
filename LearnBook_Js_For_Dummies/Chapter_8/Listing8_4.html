@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <title> Использование оператора delete</title>
+</head>
+
+<body>
+  <script>
+//Для удаления свойств из объектов используется оператор delete. 
+    let myObject = {
+      var1: "the value",
+      var2: "another value",
+      var3: "yet another"
+    };
+    // удалить свойство var2 из объекта myObject
+    delete myObject.var2;
+    // попытка записи значения var2
+    document.write(myObject.var2); // ошибка
+  </script>
+</body>
+
+</html>
