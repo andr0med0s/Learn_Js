@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Наследование классов</title>
+	<script type="text/javascript">
+		"use strict";
+		class Shape {
+			constructor(x, y) {
+				this.x = x;
+				this.y = y;
+			}
+
+			getDistance() {
+				return Math.sqrt(this.x ** 2 + this.y ** 2);
+			}
+
+			draw() { 
+				console.log('Начало рисования')
+			}
+		}
+
+		class Point extends Shape {
+			draw() {
+				super.draw(); //вызов родительского метода
+				console.log('Рисуем точку');
+			}
+		}
+
+		class Circle extends Shape {
+			constructor(x, y, r) {
+				super(x, y); //обращение к родительскому классу
+				this.r = r;
+			}
+			
+			draw() {
+				super.draw();
+				console.log('Рисуем окружность');
+			}
+		}
+
+		let s = new Shape(5, 7);
+		let p = new Point(15, 20);
+		let c = new Circle(10, 5, 30);
+
+		console.log(s);
+		console.log(p);
+		console.log(c);
+
+		console.log(s.getDistance());
+		console.log(p.getDistance());
+		console.log(c.getDistance());
+
+		// s.draw();
+		p.draw();
+		c.draw();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

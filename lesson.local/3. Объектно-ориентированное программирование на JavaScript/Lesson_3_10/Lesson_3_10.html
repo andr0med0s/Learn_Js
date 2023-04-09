@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Модификаторы доступа</title>
+	<script type="text/javascript">
+		"use strict";
+		// protected 
+		// public по умолчанию
+
+		class Point {
+			constructor(x, y) {
+				this._x = x;
+				this._y = y;
+			}
+
+			// get x(){
+			// 	return this._x;
+			// }
+			getX(){
+				return this._x;
+			}
+
+			getY(){
+				return this._y;
+			}
+
+			setX(coor) {
+				if(this.checkCoor(coor)) this._x = coor;
+			}
+			setY(coor) {
+				if(this.checkCoor(coor)) this._y = coor;
+			}
+
+			checkCoor(coor) {
+				if (coor < 0) throw new Error('Отрицательные координаты не поддерживаются');
+				return true;
+			}
+		}
+
+			let p = new Point(10, 20);
+			// console.log(p._x);
+			console.log(p.getX());
+			console.log(p.getY());
+		
+		try{
+			p.setX(-25);
+		} catch (e) {
+			console.log(e);
+		} 
+
+		try{
+			p.setY(55);
+		} catch (e) {
+			console.log(e);
+		} 
+
+		console.log(p.getY());
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
