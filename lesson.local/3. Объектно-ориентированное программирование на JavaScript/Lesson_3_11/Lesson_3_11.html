@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Флаги свойств</title>
+	<script type="text/javascript">
+		"use strict";
+		
+		class Point {
+			constructor(x,y) {
+				this.x = x;
+				this.y = y;
+			}
+		}
+
+		let p = new Point(10, 20);
+		let descriptor = Object.getOwnPropertyDescriptor(p, 'x');
+		console.log(descriptor);
+		p.x = 15;
+		// delete p.x;
+
+		Object.defineProperty(p,'x',{
+			writable: false,// свойство x доступно только для чтения, если true то свойство можно менять /запрет на запись
+			enumerable: false, //в консоли y если true, то в консоли x и y /запрет на перечисление свойств
+			configurable: true // запрет на удаление
+		});
+
+		for (let field in p) console.log(field);
+
+		//p.x = 25; // Ошибка: свойство x доступно только для чтения
+
+		//delete p.x;//Ошибка:  configurable: false нельзя удалить
+		console.log(p); 
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
