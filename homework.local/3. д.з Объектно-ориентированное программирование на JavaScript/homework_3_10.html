@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>дЗ Модификаторы доступа</title>
+	<script type="text/javascript">
+		"use strict";
+		class Rectangle {
+			constructor(h, w) {
+				this._h = h;
+				this._w = w;
+			}
+			getH() {
+				return this._h;
+			}
+			getW() {
+				return this._w;
+			}
+			setH(dimen) {
+				if (this.checkDimen(dimen)) this._h = dimen;
+			}
+			setW(dimen) {
+				if (this.checkDimen(dimen)) this._w = dimen;
+			}
+			checkDimen(dimen) {
+				if (dimen < 0) throw new Error('Отрицательные размеры не поддерживаются');
+				return true;
+			}
+		}
+
+		let r = new Rectangle(10, 20);
+		console.log(r.getH());
+		console.log(r.getW());
+
+		try{
+			r.setH(-25);
+		} catch (e) {
+			console.log(e);
+		} 
+
+		try{
+			r.setW(55);
+		} catch (e) {
+			console.log(e);
+		} 
+		console.log(r.getH());
+		console.log(r.getW());
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

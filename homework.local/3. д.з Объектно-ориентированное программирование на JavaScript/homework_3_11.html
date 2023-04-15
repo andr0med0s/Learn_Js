@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>дЗ Флаги свойств</title>
+	<script type="text/javascript">
+		"use strict";
+		class Rectangle {
+			constructor(x, y, w, h) {
+				this.x = x;
+				this.y = y;
+				this.w = w;
+				this.h = h;
+			}
+
+		}
+
+		let r = new Rectangle(10, 20, 30, 40);
+		let descriptorX = Object.getOwnPropertyDescriptor(r, 'x');
+		let descriptorY = Object.getOwnPropertyDescriptor(r, 'y');
+		let descriptorW = Object.getOwnPropertyDescriptor(r, 'w');
+		let descriptorH = Object.getOwnPropertyDescriptor(r, 'h');
+		console.log(descriptorX);
+		console.log(descriptorY);
+		console.log(descriptorW);
+		console.log(descriptorH);
+
+		Object.defineProperty(r, 'x', {
+			writable: false,// свойство x доступно только для чтения, если true то свойство можно менять /запрет на запись
+			configurable: false // запрет на удаление
+		});
+		Object.defineProperty(r, 'y', {
+			writable: false, configurable: false
+		});
+		Object.defineProperty(r, 'w', {
+			writable: false, configurable: false
+		});
+		Object.defineProperty(r, 'h', {
+			writable: false, configurable: false
+		});
+	
+		// r.x = 15;
+		// r.y = 15;
+		// r.w = 15;
+		// r.h = 15;
+
+			
+		// delete r.x;
+	
+		console.log(r);
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
