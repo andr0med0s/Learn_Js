@@ -10,48 +10,57 @@
 
 		class Rectangle {
 
-			constructor(x, y, h, w){
-			this.x = x;
-			this.y = y;
-			this.h = h;
-			this.w = w;
+			constructor(x, y, h, w) {
+				this.x = x;
+				this.y = y;
+				this.h = h;
+				this.w = w;
 			}
 
-			getArea = function () {
+			// getArea = function () {
+			getArea() {
 				return this.h * this.w;
 			}
-			getCoordinate = function () {
-				console.log(`Точка с координатами ${this.x} и ${this.y}`);
-			}
+			// // getCoordinate = function () {
+			// 	getCoordinate (){
+			// 	console.log(`Точка с координатами ${this.x} и ${this.y}`);
+			// }
 
-			getDistance = function () {
-				return Math.sqrt(this.x ** 2 + this.y ** 2);
-			}
+			// // getDistance = function () {
+			// 	getDistance () {
+			// 	return Math.sqrt(this.x ** 2 + this.y ** 2);
+			// }
 
-			toString = function(){
+			// toString = function(){
+			toString() {
 				return `Прямоугольник с координатами (${this.x}; ${this.y}) шириной ${this.w} и высотой ${this.h}`;
 			}
-			valueOf = function(){
-				return  rect.getArea();
+			//this.valueOf = function(){ 
+			valueOf() {
+				return rect.getArea();
 			}
 		}
 
 		let rect = new Rectangle(10, 20, 200, 300);
-		console.log(rect);
-		console.log(rect.getArea());
-		console.log(rect.getCoordinate());
-		console.log(rect.getDistance());
-		console.log(rect.toString());
-		console.log(rect.valueOf());
+		// console.log(rect);
+		// console.log(rect.getArea());
+		// console.log(rect.getCoordinate());
+		// console.log(rect.getDistance());
+		// console.log(rect.toString());
+		// console.log(rect.valueOf());
 
-		rect.x = 25;
-		console.log(rect.x);
-		rect.y = 45;
-		console.log(rect.y);
-		rect.h = 250;
-		console.log(rect.h);
-		rect.w = 500;
-		console.log(rect.w);
+		// rect.x = 25;
+		// console.log(rect.x);
+		// rect.y = 45;
+		// console.log(rect.y);
+		// rect.h = 250;
+		// console.log(rect.h);
+		// rect.w = 500;
+		// console.log(rect.w);
+
+		alert(rect.getArea());
+		alert(rect);
+		alert(Number(rect));
 	</script>
 </head>
 

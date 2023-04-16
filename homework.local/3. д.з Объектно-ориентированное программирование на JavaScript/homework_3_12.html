@@ -7,11 +7,27 @@
 	<title>дЗ Примеси</title>
 	<script type="text/javascript">
 		"use strict";
-		let randomNum = {
-			toRandom () {
-				return random(0, 100);
+		let randomNum  = {
+			randomInt(min, max) { // min and max included 
+				return  Math.floor(Math.random() * 101);
 			}
 		}
+
+		class Rectangle {
+			constructor(x = this.randomInt(0, 100),y = this.randomInt(0, 100),w = this.randomInt(0, 100),h = this.randomInt(0, 100)) {
+				this.x= x;
+				this.y= y;
+				this.w= w;
+				this.h= h;
+			}
+		}
+
+		Object.assign(Rectangle.prototype, randomNum);
+
+		let r = new Rectangle();
+
+		console.log(r);
+
 	</script>
 </head>
 
