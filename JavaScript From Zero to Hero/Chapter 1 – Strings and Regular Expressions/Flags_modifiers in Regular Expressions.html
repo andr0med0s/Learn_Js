@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flags/modifiers in Regular Expressions</title>
+	<script type="text/javascript">
+		"use strict";
+		/*
+				Давайте быстро рассмотрим три различных флага,
+				 которые мы можем использовать в регулярном выражении:
+				*/
+
+		/*
+		standard
+		g – global
+		i – case-insensitive matching
+		m – this performs multiline matching
+		u – Unicode
+		y – sticky
+		*/
+
+		/*
+		Стандартный флаг/модификатор - это то, что мы уже видели в нашем шаблоне регулярных выражений, и когда мы
+		создаем шаблон, нам не нужно ничего указывать. Например, /abc/ - это пример регулярного
+		выражения со стандартным флагом. Следующий флаг называется глобальным флагом и описывается буквой g.
+		Например, /abc/g, как вы можете видеть здесь, мы использовали букву g после косой черты для обозначения глобального режима. Это
+		означает, что не останавливайтесь на первом совпадении в документе или строке, а просматривайте остальную часть документа / строки
+		и найдите все соответствующие совпадения. Следующий флаг - это флаг "i". Этот флаг будет выполнять сопоставление без учета регистра. 
+		Например, наши шаблоны содержат только строчные буквы, но что произойдет, если у нас будет этот шаблон: /Abc/. Это
+		не приведет ни к какому совпадению, потому что этого нигде нет в нашей строке; поэтому мы можем использовать флаг ‘i’ или /Abc/i, чтобы сделать его
+		нечувствительным к строчным и прописным буквам. Следующий флаг называется "m" и обозначает многострочность. Если у нас есть несколько
+		строк текста, полезно использовать флаг ‘m’, чтобы получить несколько совпадений. У нас есть флаг sticky или "y", который сообщает обычному
+		выражение для поиска совпадения только по последнему индексу, а не где-либо раньше в строке. Флаг ‘u’ - еще
+		один интересный флаг, введенный в ES6, и что он делает, так это распознает символы Unicode в регулярном выражении.
+		Чтобы протестировать этот флаг, я создал новый файл под названием ’testRegex.html ’, и внутри этого файла я внедрил
+		Код на JavaScript. Я знаю, что некоторые из вас скажут: "О нет, он использует встроенный JavaScript-код в расширенном
+		Книга по JavaScript, но я делаю это только потому, что мне понадобится меньше скриншотов и меньше файлов, созданных в конце.
+		Вот вся HTML-разметка и JavaScript-код:
+		*/
+		const btn = document.querySelector('#clickBtn');
+		const pTag = document.querySelector('.result');
+		const myString = `Regular expressions are patterns used to match character combinations in strings. In JavaScript, regular expressions are also objects`
+		const regPattern = /ions/;
+		btn.addEventListener('click', (e) => {
+			const result = myString.match(regPattern);
+			pTag.innerHTML = result;
+		});
+	</script>
+</head>
+
+<body>
+	<h1>Regular Expressions</h1>
+	<p class='result' style="color:whitesmoke;font-size:26px;background-color: gray; min-height: 100px;">
+		The output goes here!
+	</p>
+	<button id='clickBtn' style="color:black;font-size:19px;">Click Me
+	</button>
+</body>
+
+</html>

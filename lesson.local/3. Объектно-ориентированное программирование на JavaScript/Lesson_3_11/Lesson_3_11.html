@@ -24,8 +24,8 @@
 		Object.defineProperty(p,'x',{
 			writable: false,// свойство x доступно только для чтения, если true то свойство можно менять /запрет на запись
 			enumerable: false, //в консоли y если true, то в консоли x и y /запрет на перечисление свойств
-			configurable: true // запрет на удаление
-		});
+			configurable: true // запрет на удаление true разрешено
+		}); 
 
 		for (let field in p) console.log(field);
 

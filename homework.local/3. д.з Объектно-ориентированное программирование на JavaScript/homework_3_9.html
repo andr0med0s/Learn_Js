@@ -8,49 +8,89 @@
 	<script type="text/javascript">
 		"use strict";
 
-		class Vehicle {
-			constructor(x, y, t, v) {
+		// class Vehicle {
+		// 	constructor(x, y, t, v) {
+		// 		this.x = x;
+		// 		this.y = y;
+		// 		this.t = t; //время 
+		// 		this.v = v; // скорость
+		// 	}
+		// 	getDistance() {
+		// 		return this.t * this.v;
+		// 	}
+
+		// 	move() {
+		// 		console.log('Начало движения автомобиля' + " " + this.x + ", " + this.y);
+		// 	}
+
+		// }
+		// class Minivan extends Vehicle {
+		// 	constructor(x, y, t, v, p) {
+		// 		super(x, y);
+		// 		this.t = t; //время 
+		// 		this.v = v; // скорость
+		// 		this.p = p; //колличество пассажиров
+		// 	}
+		// 	move() {
+		// 		 super.move();
+		// 		console.log('Начало рейса'+ " " + this.x + ", " + this.y);
+		// 	}
+
+		// }
+
+		// let auto = new Vehicle(10, 10, 2, 100);
+		// let mini = new Minivan(20, 20, 4, 50, 12);
+
+		// console.log(auto);
+		// console.log(mini);
+
+		// console.log('дистанция для автомобиля'+ " " + auto.getDistance());
+		// console.log('дистанция для минивэна'+ " " + mini.getDistance());
+
+		// console.log('количество пассажиров' + " минивэн " + mini.p)
+
+		// auto.move();
+		// mini.move();
+
+		class Car {
+			constructor(x, y, maxspeed) {
 				this.x = x;
 				this.y = y;
-				this.t = t; //время 
-				this.v = v; // скорость
-			}
-			getDistance() {
-				return this.t * this.v;
+				this.maxspeed = maxspeed;
 			}
 
-			move() {
+			move(x, y) {
+				this.x = x;
+				this.y = y;
 				console.log('Начало движения автомобиля' + " " + this.x + ", " + this.y);
 			}
-
-		}
-		class Minivan extends Vehicle {
-			constructor(x, y, t, v, p) {
-				super(x, y);
-				this.t = t; //время 
-				this.v = v; // скорость
-				this.p = p; //колличество пассажиров
-			}
-			move() {
-				 super.move();
-				console.log('Начало рейса'+ " " + this.x + ", " + this.y);
-			}
-
 		}
 
-		let auto = new Vehicle(10, 10, 2, 100);
-		let mini = new Minivan(20, 20, 4, 50, 12);
+		class Truck extends Car {
+			constructor(x, y, maxspeed, capacity) {
+				super(x, y, maxspeed);
+				this.capacity = capacity;
+			}
 
-		console.log(auto);
-		console.log(mini);
+			move(x, y) {
+				// super.move();
+				this.x = x;
+				this.y = y;
+				console.log('Начало рейса' + " " + this.x + ", " + this.y);
+			}
+		}
 
-		console.log('дистанция для автомобиля'+ " " + auto.getDistance());
-		console.log('дистанция для минивэна'+ " " + mini.getDistance());
+		let car = new Car(5, 7, 150);
+		let truck = new Truck(20, 30, 50, 10000);
 
-		console.log('количество пассажиров' + " минивэн " + mini.p)
+		console.log(car);
+		console.log(truck);
 
-		auto.move();
-		mini.move();
+		car.move(300, 200);
+		console.log(car);
+
+		truck.move(150, 250);
+		console.log(truck);
 	</script>
 </head>
 

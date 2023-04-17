@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title> Использование метода Object.create()
+    для создания объекта на основе прототипа</title>
+</head>
+
+<body>
+<script>
+  
+    //создать обобщенный тип Person
+    let Person = {
+      eyes: 2,
+      arms: 2,
+      feet: 2
+    }
+
+    //Создать объект willieNelson на основе Person
+    let willieNelson = Object.create(Person);
+    // проверка наличия унаследованных свойств
+    document.write (willieNelson.feet); // выводит 2
+</script>
+</body>
+
+</html>

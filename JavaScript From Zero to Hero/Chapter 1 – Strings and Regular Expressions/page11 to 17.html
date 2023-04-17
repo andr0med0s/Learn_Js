@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>String methods you should know about</title>
+	<script type="text/javascript">
+		"use strict";
+
+//------------------------Characters and Code points------------
+		//const message = 'Hello';
+		//console.log(message.length);
+		console.log('__________');
+		console.log(String.fromCodePoint(9731, 9733, 9842, 0x2F804));
+		console.log('__________');
+		//массив кодовых точек
+		const myCodePoints = [9731, 9733, 9842, 0x2F804];
+		//спред оператор
+		const stringOutput = String.fromCodePoint(...myCodePoints);
+		console.log(stringOutput);
+		console.log('__________');
+		// const message ='Hello World!';
+		// for(let i = 0; i < message.length; i++){
+		// 	let codePoint = message.codePointAt(i);
+		// 	console.log(codePoint);
+		// }
+
+		// const message = 'Hello World!';
+		// const codePointsArray = [];
+		// //we can traverse through our newly created string with a for loop
+		// for (let i = 0; i < message.length; i++) {
+		// 	let codePoint = message.codePointAt(i);
+		// 	//console.log(codePoint);
+		// 	codePointsArray[i] = codePoint;
+		// }
+		// //this should return back 'Hello World!'
+		// console.log(String.fromCodePoint(...codePointsArray));
+
+		console.log('__________');
+//------------------------String methods you should know about--------------
+		//1) repeat method
+		const message = 'W';
+		const repeatIt = message.repeat(3);
+		console.log(repeatIt);// 'WWW'
+		console.log('__________');
+
+		const beforeAndAfter = '   Hi There  ';
+		console.log('1 - trim method: ' + beforeAndAfter.trim());
+		console.log('2 - does те change the original content: ' + beforeAndAfter);
+		//trimStart() and trimEnd() удаление пробелов вначале и вконце строки
+		//padStart() and padEnd()  добавление пробелов вначале и вконце строки
+
+		const example = 'Hello';
+		const newString = example.padStart(10);
+		console.log(example);
+		console.log(newString);
+		console.log(example.length); // 5
+		console.log(newString.length); // 10
+
+		const newString1 = example.padStart(10, '#');
+		console.log(newString1); // #####Hello
+
+		console.log('__________');
+
+		const firstName = 'Andy';
+		const lastName = 'Garcia';
+		console.log(firstName.toLocaleLowerCase());//adny
+		console.log(lastName.toUpperCase());//GARCIA
+
+		console.log('__________');
+
+		const fullName = 'Andy Garcia';
+		console.log(fullName.length);// result: 11
+
+		console.log(fullName[0]); // первый элемент ака первая буква
+
+		console.log('Length of the fullName string is: ' + fullName.length);
+		console.log('Last character is: ' + fullName[fullName.length - 1]); // последний символ в строке
+
+		const sentence = 'I want to be a developer!';
+		const index = 7;
+		console.log(`The character at index ${index} is ${sentence.charAt(index)}`);// t // конкретный символ в строке по заданному индексу
+
+		const lastChar = sentence.charAt(sentence.length - 1);
+		console.log(lastChar);//!
+
+		//_______
+		//метод includes(). Этот метод принимает только один параметр: подстроку
+		//, по которой мы хотим выполнить поиск в текущей строке.
+		const occupation = 'Web Developer';
+		if (occupation.includes('Dev')) {
+			console.log(`Yes, it does!`);
+		} else {
+			console.log(`Nope I can't find Dev here!`);
+		}
+		//
+		// 		Метод slice принимает до двух параметров или двух индексов. Первый из них подскажет нам, с чего начать
+		// извлечение, а второй должен был остановить извлечение. 
+		//
+		const MyOccupation = 'Developer';
+		console.log(MyOccupation.slice(0, 3)); // "Dev"
+		console.log(MyOccupation.slice(2));//2
+		//Это вернет ‘veloper’, потому что символом в позиции 2 является ‘v’, и поскольку второго параметра нет,
+		// подстрока вернет остальные символы из исходной строки
+
+		const originalString = 'mozilla';
+		const updatedString = originalString.replace('mo', 'God'); // replace() string. Этот метод принимает два параметра,
+		// первый из которых будет подстрокой, которую мы ищем 
+		// для замены, а второй - новой строкой, которой мы хотим
+		//  ее заменить.
+		console.log(updatedString); // "Godzilla"
+		console.log(originalString); // "Mozilla"
+		console.log('__________');
+		let text = "Hello World";
+		const splittedArray = text.split(" ");
+		console.log(splittedArray);
+		console.log('__________');
+		const message1 = 'Ana';
+		const message2 = 'maria';
+		const newMessage = message1.concat(message2);
+		console.log(newMessage);
+		console.log('__________');
+		let text1 = "Regular expression";
+		const result = text1.match(/xpr/g);
+		console.log(result);
+		/*
+		match(), и он выполняет поиск строки по заданному регулярному выражению. Если true, он
+		вернет совпадения в массиве; в противном случае он вернет null, если совпадение не найдено.
+		*/
+		console.log('__________');
+		let string1 = '\u00F1';
+		let string2 = '\u006E\u0303';
+		console.log(string1); // ñ
+		console.log(string2); // ñ
+
+		console.log(string1 === string2); // false
+		console.log(string1.length); // 1
+		console.log(string2.length); // 2
+		/*
+		Вот почему нам нужно использовать метод normalize для преобразования строки в нормализованную форму. 
+		Мы можем использовать NFD или NFC для создания формы, которая выдаст строку, канонически равную.
+		Вот код, который сделает две строки равными и вернет логическое значение true:
+		*/
+		string1 = string1.normalize('NFD');
+		string2 = string2.normalize('NFD');
+		console.log(string1 === string2); // true
+		console.log(string1.length); // 2
+		console.log(string2.length); // 2
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

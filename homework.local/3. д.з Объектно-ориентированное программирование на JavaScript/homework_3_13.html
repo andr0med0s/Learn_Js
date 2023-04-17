@@ -9,9 +9,58 @@
 		"use strict";
 
 		class Button {
-			
+			constructor(name, text, color) {
+				this._name = name;
+				this._text = text;
+				this._color = color;
+			}
+
+			getName() {
+				return this._name;
+			}
+
+
+			getText() {
+				return this._text;
+			}
+
+			getColor() {
+				return this._color;
+			}
+
+			setName(name) {
+				this._name = name;
+			}
+
+
+			setText(text) {
+				this._text = text;
+			}
+
+			setColor(color) {
+				this._color = color;
+			}
+
+			toString() {
+				return `Кнопка с: именем ${this._name}, текстом ${this._text}, цветом ${this._color}`
+			}
+
+			getHTML() {
+				return '<input type = "button" name=" ' + this._name + ' " style="color: ' + this._color + ' ;" value= " ' + this._text + ' " /> '
+			}
 		}
 
+		let button = new Button('mybutton', 'Моя кнопка', '#c00');
+		console.log(button.getName());
+		console.log(button.getText());
+		console.log(button.getColor());
+
+		button.setText('Обновленный текст');
+		console.log(button.getHTML());
+
+		button.setName('newname');
+		button.setColor('#000');
+		alert(button);
 	</script>
 </head>
 

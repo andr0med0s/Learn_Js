@@ -7,27 +7,53 @@
 	<title>дЗ Примеси</title>
 	<script type="text/javascript">
 		"use strict";
-		let randomNum  = {
-			randomInt(min, max) { // min and max included 
-				return  Math.floor(Math.random() * 101);
+		// let randomNum  = {
+		// 	randomInt(min, max) { // min and max included 
+		// 		return  Math.floor(Math.random() * 101);
+		// 	}
+		// }
+
+		// class Rectangle {
+		// 	constructor(x = this.randomInt(0, 100),y = this.randomInt(0, 100),w = this.randomInt(0, 100),h = this.randomInt(0, 100)) {
+		// 		this.x= x;
+		// 		this.y= y;
+		// 		this.w= w;
+		// 		this.h= h;
+		// 	}
+		// }
+
+		// Object.assign(Rectangle.prototype, randomNum);
+
+		// let r = new Rectangle();
+
+		// console.log(r);
+
+		//-----------------------
+		let rand = {
+			getRandom() {
+				return Math.random() * 100;
 			}
 		}
 
 		class Rectangle {
-			constructor(x = this.randomInt(0, 100),y = this.randomInt(0, 100),w = this.randomInt(0, 100),h = this.randomInt(0, 100)) {
-				this.x= x;
-				this.y= y;
-				this.w= w;
-				this.h= h;
+			constructor(x, y, w, h) {
+				if (x === undefined) this.x = this.getRandom();
+				else this.x = x;
+				if (y === undefined) this.y = this.getRandom();
+				else this.y = y;
+				if (w === undefined) this.w = this.getRandom();
+				else this.w = w;
+				if (h === undefined) this.h = this.getRandom();
+				else this.h = h;
 			}
 		}
 
-		Object.assign(Rectangle.prototype, randomNum);
+		Object.assign(Rectangle.prototype, rand);
+		let r1 = new Rectangle();
+		console.log(r1);
 
-		let r = new Rectangle();
-
-		console.log(r);
-
+		let r2 = new Rectangle(30, 50);
+		console.log(r2);
 	</script>
 </head>
 

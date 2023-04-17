@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Regular Expressions</title>
+	<script type="text/javascript">
+		"use strict";
+/*
+давайте создадим объект RegExp и присвоим его значение переменной с именем myPattern.
+*/
+//let myPattern = /a$/;
+/*
+Приведенный выше пример создает новый объект регулярного выражения и присваивает его 
+значение переменной my Pattern. Как я уже объяснял, литералы выражений разделены косыми
+чертами. Литералы являются экземплярами класса RegExp. Мы можем добиться точно такого же
+результата, вызвав функцию конструктора RegExp().
+Вот как это выглядит на практике:
+*/
+let myPattern = new RegExp('a$');
+
+const myString = `Hi, do you know your abc's`;
+const regex = /abc/;
+//const regex = new RegExp('abc');
+console.log(regex.test(myString));//true //есть строгая, точная комбинации символов abc в строке
+
+console.log('--------------------');
+
+const myString1 = `Hi, do you know your abc's`;
+const regex1 = /ac/;
+//const regex1 = new RegExp('ac');
+console.log(regex1.test(myString1));//false //нет строгой, точной комбинации символов ac в строке
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
