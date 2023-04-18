@@ -1,0 +1,20 @@
+<html>
+
+<head>
+  <title>Свойство innerHTML</title>
+</head>
+
+<body><div><p>Это некоторый текст.</p></div></body>
+  <!-- В веб-программировании довольно часто сначала создают пустые элемен­ты
+   div в HTML -документе, а затем динамически заполняют их содержи­мым
+   с помощью свойства innerHTML. -->
+   <script>
+
+     document.body.firstChild.innerHTML = "Привет!";
+     let getTheInner = document.body.firstChild.innerHTML;
+     document.write(getTheInner);
+     
+    
+    </script>
+
+</html>

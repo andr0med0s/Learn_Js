@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <title>Создание кнопки Назад</title>
+  <script>
+    function takeMeBack() {
+      window.location.assign(window.history.go(-1));
+    }
+    function getHistoryLength() {
+      let l = window.history.length;
+      return l;
+    }
+    function getViews() {
+      alert("You've accessed " + history.length + " web pages in this session.");
+    }
+  </script>
+</head>
+
+<body>
+  <script>
+    let historyLength = getHistoryLength();
+    document.write ("<p>Добро пожаловать! количество страниц, посещенных вами в этом окне: " +
+                                historyLength + ".</p>");
+    function goBack() {
+      window.history.back();
+    }
+    function goForward() {
+      window.history.forward();
+    }
+  </script>
+  <br>
+  <!-- <a href="javascript:void(0);" onclick="takeMeBack()">Назад</a> -->
+  <button type="button" onclick="getViews();">Get Views Count</button>
+  <!-- <button type="button" onclick="getHistoryLength();">Get Views Count</button> -->
+  <br>
+  <button type="button" onclick="goBack();">Go Back</button>
+  <button type="button" onclick="goForward();">Go Forward</button>
+
+</body>
+
+</html>

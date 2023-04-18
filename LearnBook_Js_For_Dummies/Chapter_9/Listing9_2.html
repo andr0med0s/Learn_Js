@@ -1,0 +1,20 @@
+<html>
+
+<head>
+  <title> Сценарий для загрузки веб-страницы в окно браузера</title>
+  <script>
+    //с использованием свойства window.location 
+    function loadNewPage (url) {
+      window.location = url
+    }
+  </script>
+</head>
+
+<body>
+  <script>
+    let newURL = prompt("Пожалуйста, введите адрес веб-страницы!");
+    loadNewPage (newURL);
+  </script>
+</body>
+
+</html>
