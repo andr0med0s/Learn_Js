@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <!-- Одним из больших недостатков D O M является отсутствие возможности непо­
+средственного удаления элемента из документа. Вместо этого вы должны выполнить
+средствами D O M поиск родителя элемента, подлежащего удалению, а затем удалить
+данный элемент как дочерний по отношению к найденному элементу. Возможно, это
+объяснение звучит несколько запутанно, поэтому предлагаем ознакомиться с приме­
+ром, приведенным в листинге 10.9, который должен прояснить все.. -->
+  <title>Удаление элемента</title>
+  <script>
+    function removeFirstParagraph(){
+      let firstPara = document.getElementById("firstparagraph");
+      firstPara.parentNode.removeChild(firstPara);
+    }
+  </script>
+</head>
+<!--  -->
+<body>
+<div id="gibberish">
+  <p id="firstparagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error molestiae architecto doloribus praesentium mollitia totam reprehenderit eum quos, rerum magnam ab, voluptatibus quia quae, incidunt accusamus ipsum nam atque cum quasi explicabo voluptatem. Excepturi!</p>
+</div>
+<button onclick="removeFirstParagraph();">Это тарабарщина!</button>
+</body>
+
+</html>

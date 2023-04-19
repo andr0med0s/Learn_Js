@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <title>Использование метода getElementById()</title>
+  <script>
+    function calculateMPG(miles,gallons){
+      document.getElementById("displayMiles").innerHTML = parseInt(miles);
+      document.getElementById("displayGallons").innerHTML = parseInt(gallons);
+      document.getElementById("displayMPG").innerHTML = miles/gallons;
+    }
+  </script>
+</head>
+<!-- Метод getElementById (), до сих пор чаще всего используемый для выбора эле­
+ментов, занимает важное место в современной веб-разработке. Это весьма удобное
+средство, позволяющее находить и обрабатывать любой элемент по его идентифика­
+тору — уникальному атрибуту id .  -->
+<body>
+  <p>Вы проехали 10<span id="displayMiles">____</span> км.</p>
+  <p>Вы использовали <span id="displayGallons">____</span> литров бензина.</p>
+  <p>Пробег на 1 л топлива: <span id="displayMPG">____</span> км.</p>
+  <script>
+    let milesDriven = prompt("Введите пробег (км)");
+    let gallonsGas = prompt("Введите расход бензина (л)");
+    calculateMPG(milesDriven, gallonsGas);
+  </script>
+</body>
+
+</html>

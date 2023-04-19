@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <title>Использование метода getElementByTagName()</title>
+  <script>
+    function numberElements(tagName) {
+      let getTags = document.getElementsByTagName(tagName);
+      for (i = 0; i < getTags.length; i++) {
+        getTags[i].innerHTML = i + 1;
+      }
+    }
+  </script>
+</head>
+<!-- Метод getElementsByTagName() возвращает список узлов всех элементов с указан­
+ным именем тега. Например, в листинге 10.6 этот метод используется для выбора всех
+элементов h1 и замены значений их свойств innerHTML последовательными числами. -->
+<body>
+  <h1>этот текст исчезнет</h1>
+  <h1>этот текст будет перезаписан</h1>
+  <h1>JS затрет этот текст</h1>
+  <script>
+    numberElements("h1");
+  </script>
+</body>
+
+</html>

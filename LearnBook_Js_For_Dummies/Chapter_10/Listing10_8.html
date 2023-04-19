@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <!-- Для создания нового элемента в HTML -документе используется метод document .
+createElement(). В результате его применения создаются новые начальный и конеч­
+ный теги указанного типа.
+Пример использования этого метода для динамического создания списка в HTML -
+документе из массива приведен в листинге 10.8. -->
+  <title>Генерирование списка</title>
+</head>
+<!--  -->
+<body>
+  <h1>Некоторые типы мячей</h1>
+  <ul id="ballList">
+
+  </ul>
+  <script>
+    let typeOfBall = ["basket", "base", "soccer", "foot", "hand"];
+    for(i=0; i<typeOfBall.length; i++){
+      let listElement = document.createElement("li");
+      listElement.innerHTML = typeOfBall[i];
+      document.getElementById("ballList").appendChild(listElement);
+    }
+  </script>
+</body>
+
+</html>
