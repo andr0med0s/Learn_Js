@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <!-- Метод addEventListener() прослушивает события на любом DOM -узле и запу­
+скает выполнение заданных действий в зависимости от наступившего события. Когда
+запускается функция, указанная для обработчика события в качестве выполняемого
+действия, она автоматически получает единственный аргумент — объект Event. В со­
+ответствии с общепринятым соглашением для этого аргумента используется имя е.. -->
+  <title>Приложение для счета</title>
+  <script>
+    //дождаться окончания загрузки окна и лишь потом
+    //зарегистрировать событие onclick
+    window.addEventListener('load', registerEvents, false);
+    // создать глобальную переменную для счетчика
+    let theCount = 0;
+    /**
+    Регистрирует событие onclick
+    */
+    function registerEvents(e) {
+      document.getElementById("incrementButton").addEventListener('click', increaseCount, false);
+      document.getElementById("incrementButton").addEventListener('click', changeSize, false);
+    }
+    /**
+    Инкрементирует theCount и отображает результат
+    */
+    function increaseCount(e) {
+      theCount++;
+      document.getElementById("currentCount").innerHTML = theCount;
+    }
+    /**
+    Изменяет размер шрифта для вывода значения счетчика
+    */
+    function changeSize(e) {
+      document.getElementById("currentCount").style.fontSize = theCount;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Щелкните на кнопке для счета</h1>
+  <p>Текущее значение: <span id="currentCount">0</span></p>
+  <button id="incrementButton">Инкрементировать счетчик</button>
+</body>
+
+</html>

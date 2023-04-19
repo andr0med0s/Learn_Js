@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <!-- В версии 3 браузера Netscape была введена новая модель событий, позволяющая
+программистам подключать события к элементам в виде свойств. В листинге 11.2 при­
+веден пример того, как работает эта модель. -->
+  <title>Приложение для счета</title>
+    <script>
+      //дождаться окончания загрузки окна и лишь потом
+      //зарегистрировать событие onclick
+      window.onload = initializer;
+      // создать глобальную переменную для счетчика
+      let theCount = 0;
+      /**
+        Регистрирует событие onclick
+      */
+      function initializer(){
+        document.getElementById("incrementButton").onclick = increaseCount;
+      }
+      /**
+      Инкрементирует theCount и отображает результат
+      */
+      function increaseCount(){
+        theCount++;
+        document.getElementById("currentСount").innerHTML = theCount;
+      }
+    </script>
+</head>
+
+<body>
+  <h1>Щелкните на кнопке для счета</h1>
+  <p>Текущее значение: <span id="currentСount">0</span></p>
+  <button id="incrementButton">Инкрементировать счетчик</button>
+</body>
+
+</html>
