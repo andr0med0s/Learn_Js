@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Regular Expressions</title>
+
+</head>
+
+<body>
+	<h1>Regular Expressions</h1>
+	<p class='result' style="color:whitesmoke;font-size:26px;background-color: gray; min-height: 100px;">
+		The output goes here!
+	</p>
+	<button id='clickBtn' style="color:black;font-size:19px;">Click Me
+	</button>
+	<script type="text/javascript">
+		"use strict";
+		const btn = document.querySelector('#clickBtn');
+		const pTag = document.querySelector('.result');
+		const myString = `Regular expressions are patterns used to match character combinations in strings 100% true. In JavaScript, regular expressions are also objects!`;
+		// const regPattern = /\w/g;//global
+		/*
+		Как вы можете видеть в myString, я добавил ‘100%’ и восклицательный знак ‘!’ в конце строки. Если вы посмотрите на
+		таблицу, то строчная буква "\w’ пытается соответствовать всем символам слова. И если мы нажмем на кнопку, мы получим
+		следующий вывод – извините, что он такой длинный – только без знака процента "%" и восклицательного знака
+		*/
+		/*
+		Как вы можете видеть в выходных данных, пробелы не включены. Давайте теперь попробуем использовать заглавную букву W и
+		понаблюдаем за результатом:
+		*/
+		// const regPattern = /\W/g;//global
+		/*
+		Таким образом, он возвращает все символы, не являющиеся словами, такие как ‘% и !’. Пожалуйста, не впадайте в замешательство. Он не возвращает запятую,
+		но возвращает пробелы между ними. Я не буду тестировать каждый из них, но давайте проверим, что произойдет, если мы используем
+		строчную букву "d".
+		*/
+		// const regPattern = /\d/g;//global
+		/*
+		Наконец, что, если мы захотим включить символ обратной косой черты в наше регулярное выражение? Что ж, если мы этого хотим, мы должны
+		экранировать даже обратную косую черту другой обратной косой чертой. Это будет регулярное выражение, которое соответствует любой строке,
+		содержащей обратную косую черту / \\ /.
+		И это все для данного раздела. Пожалуйста, не стесняйтесь проверить, что произойдет с другими специальными символами, которые я
+		включил в таблицу, но если вы не можете, это должно быть понятно само собой, если вы только прочтете, что они делают.
+		*/
+		// const regPattern = /\s/g;//global
+		const regPattern = /\S/g;//global
+		btn.addEventListener('click', (e) => {
+			const result = myString.match(regPattern);
+			pTag.innerHTML = result;
+		});
+	</script>
+</body>
+
+</html>
