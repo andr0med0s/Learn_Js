@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Regular Expressions</title>
+
+</head>
+
+<body>
+	<h1>Regular Expressions</h1>
+	<p class='result' style="color:whitesmoke;font-size:26px;background-color: gray; min-height: 100px;">
+		The output goes here!
+	</p>
+	<button id='clickBtn' style="color:black;font-size:19px;">Click Me
+	</button>
+	<script type="text/javascript">
+		"use strict";
+		/*
+		Метод replace(), аналогично методу поиска, выполняет поиск, но когда он находит совпадение, он также выполняет
+		операцию замены. Этот метод замены заменит только первое совпадение. Чтобы выполнить несколько замен, вам
+		необходимо использовать глобальный флаг ‘g’. Первым аргументом метода replace может быть строка вместо регулярного
+		выражения. Если мы используем строку, то метод будет выполнять поиск по всей строке буквально, и он не будет преобразовывать строковый
+		аргумент в регулярное выражение, как это было у нас в методе поиска. Помните, что это было сделано автоматически с помощью
+		метод search(), но это не произойдет в методе replace().
+		Наконец, вот пример метода replace(), использующего регулярное выражение для сопоставления:
+		*/
+		//Заменить метод регулярным выражением
+		let simpleText = 'I love javaScript, but javaScript can be difficult to learn!';
+		let output = simpleText.replace(/javaScript/g, "JavaScript");
+		console.log(output);
+		/*
+		Как вы можете видеть из примера, метод replace возвращает новую строку с замененными значениями. Я хочу, чтобы вы
+		обратили внимание, что это не изменит и не повлияет на исходную строку, хранящуюся в виде простого текста. Как обсуждалось ранее, метод replace
+		может буквально заменить значение в строке другим строковым значением.
+		Вот пример replace(), использующий строку для сопоставления
+		*/
+		//заменить метод строкой
+		let sampleText = "Hi my name is Andy!";
+		//мы заменяем Энди на Томаса
+		let result = sampleText.replace("Andy", "Thomas");
+		console.log(result);
+		/*
+		В этом примере мы заменяем Энди на Томаса. Хорошо, давайте приведем еще один пример, в котором мы хотим
+		выполнить замену в нескольких местах, и это может быть достигнуто благодаря глобальному флагу, который мы уже обсуждали:
+		const regExp3 = /\d{4}/g
+		const myText = "I was born in 1990. Do you know anyone that is born in 1990?";
+		const output1 = myText.replace(regExp3, "1989");
+		console.log(output1);
+		*/
+		/*
+				Давайте расскажем о чем-то еще более интересном и полезном. Представьте, что вы хотите заменить 2 разные подстроки
+		в существующей строке новой строкой. Что ж, кто-то скажет, что это просто. Мы можем использовать два метода замены для
+		этой строки, один за другим. Но вместо того, чтобы делать это, мы можем создать цепочку методов. Мы можем достичь этого с
+		помощью одной строки кода, как в этом примере:
+		*/
+
+		let testString1 = "This James Bond movie was great. I love watching James Bond movies with my brother.";
+		let output2 = testString1.replace(/James Bond/gi, "Star Wars").replace(/brother/gi, "girlfriend");
+		console.log(output2);
+		/*
+				Еще одна расширенная функция заключается в том, что метод replace может принимать функцию замены в качестве второго параметра. Вы
+		должны знать, что задача функции - возвращать значение, и это значение будет использоваться в качестве новой строки, которая заменит
+		совпадения. Вот пример функции замены:
+		*/
+		//replacement function.
+		const testString2 = "I was born in 1990. Do you know anyone that is born in 1990?";
+		const regExp3 = /\d{4}/g;
+		function replacerFn() {
+			return "1987";
+		}
+		console.log(testString2.replace(regExp3, replacerFn));
+		/*
+				Но на этом все не заканчивается. Функция замены может принимать еще несколько аргументов. Вот таблица аргументов
+		, которые мы можем передать в функцию:
+		смотри table of arguments that we can pass into the function.png
+		*/
+
+		/*
+		Первый пример покажет вам, как соответствующая строка заменяется с помощью функции replacement:
+		*/
+		const testString3 = "I hate JavaScript and I hate RegEx as well!";
+		const regExp4 = /hate/g;
+		function replacerFn1(match) {
+			console.log(match);
+			return `love`;
+		}
+		console.log(testString3.replace(regExp4, replacerFn1));
+		/*
+		Следующий пример покажет вам захваты группы захвата с помощью нашего регулярного выражения:
+		*/
+		const testString4 = "I hate JavaScript and I hate RegEx as well!";
+		const regExp5 = /hat(e)/g;
+		function replacerFn2(match, p1) {
+			console.log(`The matched string ${match}, capturing ${p1}`);
+			return `love`;
+		}
+		console.log(testString4.replace(regExp5, replacerFn2));
+
+		/*
+				Ниже будет показано смещение
+		совпадений, и в нашем случае их два. Одно из совпадений находится в индексе 2, а другое совпадение, которое произойдет
+		для подстроки "ненависть", находится в индексе 24:
+		*/
+		//offset
+		const testString5 = "I hate JavaScript and I hate RegEx as well!";
+		const regExp6 = /hat(e)/g;
+		function replacerFn3(match, p1, offset) {
+			console.log(`The matched string ${match}, capturing ${p1} at this index ${offset}`);
+			return `love`;
+		}
+		console.log(testString5.replace(regExp6, replacerFn3));
+		/*
+		Наконец, вот все параметры, которые мы можем использовать в функции замены, включая всю строку целиком:
+		*/
+		//string
+		const testString6 = "I hate JavaScript and I hate RegEx as well!";
+		const regExp7 = /hat(e)/g;
+		function replacerFn4(match, p1, offset, string) {
+			console.log(`The matched string ${match}, capturing ${p1} at this index ${offset} in ${string}`);
+			return `love`;
+		}
+		console.log(testString6.replace(regExp6, replacerFn4));
+	</script>
+</body>
+
+</html>

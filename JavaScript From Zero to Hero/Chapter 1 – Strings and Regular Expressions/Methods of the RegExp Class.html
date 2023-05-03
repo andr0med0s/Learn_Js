@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Regular Expressions</title>
+
+</head>
+
+<body>
+	<h1>Regular Expressions</h1>
+	<p class='result' style="color:whitesmoke;font-size:26px;background-color: gray; min-height: 100px;">
+		The output goes here!
+	</p>
+	<button id='clickBtn' style="color:black;font-size:19px;">Click Me
+	</button>
+	<script type="text/javascript">
+		"use strict";
+		/*
+		До сих пор мы использовали некоторые методы, но я хотел бы кратко описать, какие методы принадлежат классу RegExp. Одним из
+		методов, которые мы использовали вначале, был метод test(). Этот метод вернул бы значение true, если бы было
+		совпадение.
+		Вот один из примеров метода тестирования:
+
+		/([0-9]{2})/.test(‘super 08’); //true
+		Or
+		/ (^ [0 - 9]{ 2 }) /.test('super 08'); // false
+		*/
+
+		/*
+		Другой метод, называемый exec(), вернул бы массив, содержащий первое совпадающее подвыражение или null, если совпадений
+не было.
+Вот один из примеров:
+
+		const result = /[0-9]+/.exec('super 08 12'); //true
+		*/
+		/*
+		Из выходных данных мы можем видеть, что у нас есть массив из одного элемента, который равен ‘08’. У нас также есть два свойства, такие как
+index и input. Индекс - это место, где произошло сопоставление. Помните, что процесс сопоставления начался слева
+направо с нулевым индексом. Вот таблица, которая поможет вам понять, как мы получили индекс равным шести. см скриншот: Methods of the RegExp Class.png
+		*/
+
+		/*
+		Следующее свойство, называемое input, будет содержать весь аргумент, который мы передаем функции exec, и в нашем случае
+это был 'super 08 12'.
+		*/
+	</script>
+</body>
+
+</html>
