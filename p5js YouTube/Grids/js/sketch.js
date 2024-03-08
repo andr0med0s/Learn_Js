@@ -91,5 +91,6 @@ function pattern3 () {
 
 function pattern4 () {
   //half forward diagonal
-  line (0, gridSize, gridSize / 2, gridSize / 2);
+  // line (0, gridSize, gridSize / 2, gridSize / 2);
+  circle(0,0,gridSize);
 }
