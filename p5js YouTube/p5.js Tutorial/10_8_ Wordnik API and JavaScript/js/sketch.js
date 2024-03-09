@@ -10,7 +10,7 @@ function setup(){
   link = createA('#', word);
   link.mousePressed(askWordnik);
   
-}
+} 
 
 function askWordnik(){
   loadJSON(url1 + word + url2, gotData); 
